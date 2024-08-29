@@ -181,9 +181,23 @@ Script for automating UDP network scans
 ```
 nc 172.16.82.106 80
 ```
-use `get` or `head` to grab banners in a http request 
+use `get`, `head`, `get-banner` to grab website information
 
 ### CURL and WGET
+tools to interact with HTTP, HTTPS, and FTP
+
+```
+curl http://172.16.82.106
+curl ftp://172.16.82.106
+```
+
+```
+wget -r http://172.16.82.106
+wget -r ftp://172.16.82.106
+```
+
+**WGET IS RECOMMENDED**
+
 
 
 ## Terminology
