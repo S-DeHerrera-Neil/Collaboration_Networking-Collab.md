@@ -1,8 +1,4 @@
-# Recon Steps
-- Network Footprinting
-- Network Scanning
-- Network Enumeration
-- Vulnerability Assessment
+# Network Reconnaissance
 ![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/recon.png)
 
 
