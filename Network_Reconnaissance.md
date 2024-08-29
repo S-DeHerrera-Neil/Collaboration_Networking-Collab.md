@@ -107,11 +107,12 @@ for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
 ping sweep - pings all ips 172.16.82.1 to 172.16.82.254
 
 ### NMAP
+[Nmap guide](https://nmap.org/book/man.html)
 ```
 nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024 
 ```
 
-#### Scan Types
+#### [Scan Types](https://nmap.org/book/man-port-scanning-techniques.html)
 - "Half connect" SYN scan `-sS`
 - Full connect scan `-sT`
 - Null scan `-sN`
@@ -120,14 +121,17 @@ nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024
 - UDP scan `-sU`
 - Idle scan `-sI`
 
-#### Speed Options
-- `T4`
+#### [Speed Options](https://nmap.org/book/man-performance.html)
+- `T4` - Aggressive - 500ms
 
-#### Additional Args
+#### [Additional Args](https://nmap.org/book/man-misc-options.html)
 - Version scan `-sV`
 - OS Fingerprinting `-O`
 - ICMP Ping `-PE`
 - Skip Ping `-Pn`
+
+### Traceroute
+
 
 ## Terminology
 ### Passive (not usually detectable by adversary)
