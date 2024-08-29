@@ -200,7 +200,12 @@ wget -r ftp://172.16.82.106:8080
 
 **WGET is recommended over CURL**
 
+### FTP
+```
+ftp 10.10.10.10
+```
 
+in FTP session, to use commands on local machine add the letter 'l' to the start of the command, I.E: `ls` becomes `lls`
 
 ## Terminology
 ### Passive (not usually detectable by adversary)
