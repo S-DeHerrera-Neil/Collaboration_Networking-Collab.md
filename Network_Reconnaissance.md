@@ -94,10 +94,40 @@ sudo p0f -r test.pcap
 ```
 
 ## Active External
-- Remote to Local
-- Local to Remote
-- Local to Local
-- Remote to Remote
+
+### Ping
+```
+ping 172.16.82.106 -c 1
+```
+individual ping - ping one ip once
+
+```
+for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
+```
+ping sweep - pings all ips 172.16.82.1 to 172.16.82.254
+
+### NMAP
+```
+nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024 
+```
+
+#### Scan Types
+- "Half connect" SYN scan `-sS`
+- Full connect scan `-sT`
+- Null scan `-sN`
+- FIN scan `-sF`
+- XMAS tree scan `-sX`
+- UDP scan `-sU`
+- Idle scan `-sI`
+
+#### Speed Options
+- `T4`
+
+#### Additional Args
+- Version scan `-sV`
+- OS Fingerprinting `-O`
+- ICMP Ping `-PE`
+- Skip Ping `-Pn`
 
 ## Terminology
 ### Passive (not usually detectable by adversary)
