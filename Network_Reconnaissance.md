@@ -51,6 +51,10 @@
 - [Pentest-Standard](http://www.pentest-standard.org/index.php/Intelligence_Gathering)
 - [SecuritySift](https://www.securitysift.com/passive-reconnaissance/)
 
+### Dig and Whois
+- Whois - queries DNS registrar over TCP 43
+- Dig - queries DNS server over UDP 53
+
 ## Terminology
 ### Passive (not usually detectable by adversary)
 ### Active (detectable recon: ssh, nmap, traceroute, etc)
