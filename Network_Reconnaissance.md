@@ -196,7 +196,7 @@ wget -r http://172.16.82.106
 wget -r ftp://172.16.82.106
 ```
 
-**WGET is recommended over curl**
+**WGET is recommended over CURL**
 
 
 
