@@ -134,7 +134,13 @@ nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024
 - Skip Ping `-Pn`
 
 ### Traceroute
-
+[Traceroute man page](https://ss64.com/bash/traceroute.html)
+```
+traceroute 172.16.82.106
+traceroute my.domain.com
+traceroute 172.16.82.106 -p 123
+sudo 
+```
 
 ## Terminology
 ### Passive (not usually detectable by adversary)
