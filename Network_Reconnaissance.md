@@ -3,6 +3,7 @@
 - Network Scanning
 - Network Enumeration
 - Vulnerability Assessment
+![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/recon.png)
 
 
 ## Passive External (OSINT)
@@ -55,7 +56,6 @@
 - [SecuritySift](https://www.securitysift.com/passive-reconnaissance/)
 
 ## Terminology
-![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/recon.png)
 ### Passive (not usually detectable by adversary)
 ### Active (detectable recon: ssh, nmap, traceroute, etc)
 ### Internal (operating on local network)
