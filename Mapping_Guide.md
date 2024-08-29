@@ -1,13 +1,13 @@
 # Requirements
 ```
-Device type (Router/host)
-System Host-names
-Interface names (eth0, eth1, etc)
-IP address and CIDRs for all interfaces
-TCP and UDP ports
-MAC Address
-OS type/version
-Known credentials
+Device type
+Hostname
+Interface type
+Interface IP
+Subnet Mask CIDR
+Routing Protocol, IP network and Network Name groupings
+Open ports
+Operating system type and versions
 ```
 # Examples
 ![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/offensivefinishednetwork.png)
