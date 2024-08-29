@@ -13,7 +13,7 @@
 
 - Utilize a Python script that utilizes Datagram Sockets to create a UDP connection to a remote device.
 
- - Utilize a Python script that utilizes Datagram Sockets to create a UDP connection to a remote device.
+ - Utilize a Python script that utilizes RAW Sockets.
 
 # Lesson 3.
 
