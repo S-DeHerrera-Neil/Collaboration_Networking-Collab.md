@@ -1,9 +1,8 @@
 # Recon Steps
-
-## Network Footprinting
-## Network Scanning
-## Network Enumeration
-## Vulnerability Assessment
+- Network Footprinting
+- Network Scanning
+- Network Enumeration
+- Vulnerability Assessment
 
 
 ## Passive External (OSINT)
