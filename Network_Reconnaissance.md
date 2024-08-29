@@ -6,9 +6,7 @@
 ## Vulnerability Assessment
 
 
-## Passive External
-
-
+## Passive External (OSINT)
 ### IP Registry Information
 - [IANA IPv4](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml)
 - [IANA IPv6](https://www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xhtml)
@@ -25,7 +23,7 @@
 - [web-check.xyz](https://web-check.xyz/)
 - [web-check.as93.net](https://web-check.as93.net/)
 - [urlscan.io](https://urlscan.io/)
-
+- 
 ### IP GeoLocation
 - [maxmind.com](https://www.maxmind.com/en/locate-my-ip-address/)
 - [iplocation.io](https://iplocation.io/)
@@ -48,6 +46,14 @@
 - [Search Engines](https://en.wikipedia.org/wiki/List_of_search_engines)
 - [Social Media](https://en.wikipedia.org/wiki/List_of_social_networking_services)
 - [Job Portals](https://en.wikipedia.org/wiki/List_of_employment_websites)
+
+### Identfying Technologies
+- [File extensions](https://en.wikipedia.org/wiki/List_of_filename_extensions)
+- [Server responses](https://websiteguidelines.com/guides/different-types-of-web-servers/)
+- [Website content](https://dorik.com/blog/how-to-tell-what-website-builder-was-used)
+- [Google Hacking](https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06)
+- [Shodan.io](https://www.shodan.io/)
+- [MAC OUI Lookup](https://macaddress.io/)
 
 ## Terminology
 ![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/recon.png)
