@@ -129,7 +129,6 @@ nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024
 #### [Additional Args](https://nmap.org/book/man-misc-options.html)
 - Version scan `-sV`
 - OS Fingerprinting `-O`
-- ICMP Ping `-PE`
 - Skip Ping `-Pn`
 
 ### Traceroute
