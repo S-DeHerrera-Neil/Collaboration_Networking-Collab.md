@@ -124,7 +124,9 @@ nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024
 - Ping sweep `-PE`
 
 #### [Speed Options](https://nmap.org/book/man-performance.html)
-- `T4` - Aggressive - 500ms
+- `T5` - Insane - 250 ms
+- `T4` - Aggressive - 500 ms
+- `T3` - Normal - 1 sec
 
 #### [Additional Args](https://nmap.org/book/man-misc-options.html)
 - Version scan `-sV`
