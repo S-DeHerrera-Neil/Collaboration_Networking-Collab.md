@@ -207,6 +207,71 @@ ftp 10.10.10.10
 
 in FTP session, to use commands on local machine add the letter 'l' to the start of the command, I.E: `ls` becomes `lls`
 
+### IP Config
+```
+Windows: ipconfig /all
+Linux: ip address (ifconfig depreciated)
+VyOS: show interface
+```
+### DNS configuration
+```
+Windows: ipconfig /displaydns
+Linux: cat /etc/resolv.conf
+```
+### ARP Cache
+```
+Windows: arp -a
+Linux: ip neighbor (arp -a depreciated)
+```
+### Active Internal Network Reconnaissance
+
+    Will use similar tools as Active External Network Reconnaissance
+
+    Scope and addresses may differ
+
+### ARP Scanning
+```
+arp-scan --interface=eth0 --localnet
+nmap -sP -PR 172.16.82.96/27
+```
+### Ping Scanning
+```
+ping -c 1 172.16.82.106
+for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
+sudo nmap -sP 172.16.82.96/27
+```
+
+### Network Connections
+```
+Windows: netstat
+Linux: ss (netstat depreciated)
+```
+### Service Files
+```
+Windows: %SystemRoot%\system32\drivers\etc\services
+Linux/Unix: /etc/services
+```
+### OS Information
+```
+Windows: systeminfo
+Linux: uname -a and /etc/os-release
+```
+### Running Processes
+```
+Windows: tasklist
+Linux: ps -elf or top
+```
+
+## Active Internal
+Same as Active External except for:
+
+### DEV TCP Banner Grab
+```
+exec 3<>/dev/tcp/172.16.82.106/22; echo -e "" >&3; cat <&3
+for p in {1..1023}; do(echo >/dev/tcp/172.16.82.106/$p) >/dev/null 2>&1 && echo "$p open"; done
+```
+
+
 ## Terminology
 ### Passive (not usually detectable by adversary)
 ### Active (detectable recon: ssh, nmap, traceroute, etc)
