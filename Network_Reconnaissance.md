@@ -243,8 +243,8 @@ sudo nmap -sP 172.16.82.96/27
 
 ### Network Connections
 ```
-Windows: netstat
-Linux: ss (netstat depreciated)
+Windows: netstat -ano
+Linux: ss -ntlp
 ```
 ### Service Files
 ```
