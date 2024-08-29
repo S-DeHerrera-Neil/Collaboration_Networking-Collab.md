@@ -51,9 +51,24 @@
 - [Pentest-Standard](http://www.pentest-standard.org/index.php/Intelligence_Gathering)
 - [SecuritySift](https://www.securitysift.com/passive-reconnaissance/)
 
-### Dig and Whois
-- Whois - queries DNS registrar over TCP 43
-- Dig - queries DNS server over UDP 53
+### DNS Scanning
+#### Whois
+queries DNS registrar over TCP 43
+```
+whois zonetransfer.me
+```
+#### Dig
+queries DNS server over UDP 53
+```
+dig zonetransfer.me A # ipv4 records
+dig zonetransfer.me AAAA # ipv6 records
+dig zonetransfer.me MX # mail server records
+dig zonetransfer.me TXT
+dig zonetransfer.me NS # Name server records
+dig zonetransfer.me SOA # Start of Authority Records
+```
+#### [netcraft.com](https://sitereport.netcraft.com)
+web based alternative to dig and whois
 
 ## Terminology
 ### Passive (not usually detectable by adversary)
