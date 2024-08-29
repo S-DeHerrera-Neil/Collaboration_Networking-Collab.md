@@ -106,6 +106,11 @@ for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
 ```
 ping sweep - pings all ips 172.16.82.1 to 172.16.82.254
 
+Note: an alternative to ping is the nmap command:
+```
+sudo nmap -sP 172.16.82.96/27
+```
+
 ### NMAP
 [Nmap guide](https://nmap.org/book/man.html)
 ```
@@ -233,12 +238,6 @@ Linux: ip neighbor (arp -a depreciated)
 ```
 arp-scan --interface=eth0 --localnet
 nmap -sP -PR 172.16.82.96/27
-```
-### Ping Scanning
-```
-ping -c 1 172.16.82.106
-for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
-sudo nmap -sP 172.16.82.96/27
 ```
 
 ### Network Connections
