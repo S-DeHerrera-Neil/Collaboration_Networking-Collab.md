@@ -2,7 +2,7 @@
 ![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/recon.png)
 
 
-## Passive External (OSINT)
+## Passive External (OSINT) THIS IS OUT OF THE SCOPE OF THIS COURSE!
 ### IP Registry Information
 - [IANA IPv4](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml)
 - [IANA IPv6](https://www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xhtml)
@@ -94,6 +94,10 @@ sudo p0f -r test.pcap
 ```
 
 ## Active External
+- Remote to Local
+- Local to Remote
+- Local to Local
+- Remote to Remote
 
 ## Terminology
 ### Passive (not usually detectable by adversary)
