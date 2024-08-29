@@ -15,6 +15,8 @@
 
  - Utilize a Python script that utilizes RAW Sockets.
 
+ - Encoding & Decoding.
+
 # Lesson 3.
 
 - 
