@@ -265,11 +265,15 @@ Linux: ps -elf or top
 ## Active Internal
 Same as Active External except for:
 
-### DEV TCP Banner Grab
+### DEV TCP
 ```
 exec 3<>/dev/tcp/172.16.82.106/22; echo -e "" >&3; cat <&3
+```
+Banner grab
+```
 for p in {1..1023}; do(echo >/dev/tcp/172.16.82.106/$p) >/dev/null 2>&1 && echo "$p open"; done
 ```
+Scan all ports
 ## Network Mapping Tools
 
 [draw.io](https://app.diagrams.net/) ----- [template](https://1drv.ms/u/s!Arz6vf8sVG8vgpMsQ1RRtb0rcP7x4w?e=R9tlao)
