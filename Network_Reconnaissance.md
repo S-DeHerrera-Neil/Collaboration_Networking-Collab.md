@@ -137,9 +137,10 @@ nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024
 [Traceroute man page](https://ss64.com/bash/traceroute.html)
 ```
 traceroute 172.16.82.106
-traceroute my.domain.com
 traceroute 172.16.82.106 -p 123
-sudo 
+sudo traceroute 172.16.82.106 -I # Use ICMP ECHO for probes
+sudo traceroute 172.16.82.106 -T # User TCP SYN for probes
+sudo traceroute 172.16.82.106 -T -p 443
 ```
 
 ## Terminology
