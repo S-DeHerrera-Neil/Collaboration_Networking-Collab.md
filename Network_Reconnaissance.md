@@ -120,6 +120,8 @@ nmap -sS -O -T4 -Pn -n X.X.X.X -p1-1024
 - XMAS tree scan `-sX`
 - UDP scan `-sU`
 - Idle scan `-sI`
+- Broadcast Ping `-sP`
+- Ping sweep `-PE`
 
 #### [Speed Options](https://nmap.org/book/man-performance.html)
 - `T4` - Aggressive - 500ms
