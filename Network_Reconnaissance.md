@@ -67,6 +67,11 @@ dig zonetransfer.me TXT
 dig zonetransfer.me NS # Name server records
 dig zonetransfer.me SOA # Start of Authority Records
 ```
+
+```
+dig axfr @nsztm1.digi.ninja zonetranfer.me 
+```
+shows an example of a zone tranfer from the `nsztm1.digi.ninja` SOA server on the `zonetransfer.me` domain 
 #### [netcraft.com](https://sitereport.netcraft.com)
 web based alternative to dig and whois
 
