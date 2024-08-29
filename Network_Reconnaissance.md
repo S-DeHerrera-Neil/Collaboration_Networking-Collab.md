@@ -93,6 +93,8 @@ sudo p0f -i eth0
 sudo p0f -r test.pcap
 ```
 
+## Active External
+
 ## Terminology
 ### Passive (not usually detectable by adversary)
 ### Active (detectable recon: ssh, nmap, traceroute, etc)
