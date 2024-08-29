@@ -36,11 +36,6 @@
 - [bgp.he.net](https://bgp.he.net/)
 - [bgp4.as](https://www.bgp4.as/tools/)
 
-### Helpful links
-- [OSINT Framework](https://osintframework.com/)
-- [Pentest-Standard](http://www.pentest-standard.org/index.php/Intelligence_Gathering)
-- [SecuritySift](https://www.securitysift.com/passive-reconnaissance/)
-
 ### Identifying people
 - Crawler tools ([Maltego](https://www.maltego.com/) or [Creepy](https://www.geocreepy.com/))
 - [Search Engines](https://en.wikipedia.org/wiki/List_of_search_engines)
@@ -54,6 +49,11 @@
 - [Google Hacking](https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06)
 - [Shodan.io](https://www.shodan.io/)
 - [MAC OUI Lookup](https://macaddress.io/)
+
+### Helpful links
+- [OSINT Framework](https://osintframework.com/)
+- [Pentest-Standard](http://www.pentest-standard.org/index.php/Intelligence_Gathering)
+- [SecuritySift](https://www.securitysift.com/passive-reconnaissance/)
 
 ## Terminology
 ![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/recon.png)
