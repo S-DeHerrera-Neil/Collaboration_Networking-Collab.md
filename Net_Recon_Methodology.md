@@ -1,0 +1,16 @@
+- Host Discovery
+  - Ruby ping sweep
+  - Nmap scan if no ping
+- Port Discovery
+  - nmap
+  - nc scan script
+- Port Validation
+  - Banner grab using nc [ip addr] [port]
+- Follow-on actions based on ports found
+  - for 21 or 80 wget -r [IP ADDR] pr wget -r ftp://[IP ADDR]
+  - for 22 or 23 CONNECT and PASSIVE RECON
+  - for 21 only
+    - FTP [IP ADDR]
+      - passive
+      - ls
+      - get [filename]
