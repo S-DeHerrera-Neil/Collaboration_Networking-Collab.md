@@ -189,11 +189,13 @@ tools to interact with HTTP, HTTPS, and FTP
 ```
 curl http://172.16.82.106
 curl ftp://172.16.82.106
+curl ftp://172.16.82.106:8080 # specify port if it is non-standard
 ```
 
 ```
 wget -r http://172.16.82.106
 wget -r ftp://172.16.82.106
+wget -r ftp://172.16.82.106:8080
 ```
 
 **WGET is recommended over CURL**
