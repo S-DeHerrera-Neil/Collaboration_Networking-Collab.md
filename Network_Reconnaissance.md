@@ -43,7 +43,6 @@
 - [Server responses](https://websiteguidelines.com/guides/different-types-of-web-servers/)
 - [Website content](https://dorik.com/blog/how-to-tell-what-website-builder-was-used)
 - [Google Hacking](https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06)
-- [Shodan.io](https://www.shodan.io/)
 - [MAC OUI Lookup](https://macaddress.io/)
 
 ### Helpful links
@@ -76,6 +75,23 @@ shows an example of a zone tranfer from the `nsztm1.digi.ninja` SOA server on th
 Note: Technically zone transfers are considered 
 #### [netcraft.com](https://sitereport.netcraft.com)
 web based alternative to dig and whois
+
+### Historical Content
+- [Wayback Machine](http://archive.org/web/)
+
+### Google Searches
+- [List of filters](https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06)
+- [Dork Search](https://dorksearch.com/)
+
+### Shodan
+- [Shodan.io](https://www.shodan.io/)
+
+### Passive OS Fingerprinter (P0F)
+```
+more /etc/p0f/p0f.fp
+sudo p0f -i eth0
+sudo p0f -r test.pcap
+```
 
 ## Terminology
 ### Passive (not usually detectable by adversary)
