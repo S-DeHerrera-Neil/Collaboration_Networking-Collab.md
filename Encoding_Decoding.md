@@ -25,6 +25,7 @@ converting a string into and out of raw hexadecimal format `-p`
 
 
 # Base64
+![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/base64chart.PNG)
 ## via terminal
 ```
 base64 file.txt > file-encoded.txt
