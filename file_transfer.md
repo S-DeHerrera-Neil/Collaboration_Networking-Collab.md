@@ -44,7 +44,32 @@ Designed to fix the issues with Active FTP
 - TCP 22
 - Allows simple file transfer (think TFTP) via SSH
 
+### Syntax
+
 ```
-scp /home/scpuser/myfile.txt student@10.10.10.10:/home/client/ # sends file from local machine to remote client
-scp student@10.10.10.10:/home/client/myfile.txt . # grabs file from remote client to present working directory
+scp [-p <alternate port>] <file to grab> <where to send>
 ```
+
+Options:
+- `-v` verbose mode
+- `-P` alternate port
+- `-r` recursively copy directory
+- `-3` 3-way copy (use when copying a file from one remote host to another remote host)
+
+### Examples
+```
+scp /home/scpuser/myfile.txt student@10.10.10.10:/home/client/
+```
+ sends file from local machine to remote client
+
+```
+scp student@10.10.10.10:/home/client/myfile.txt .
+```
+grabs file from remote client to present working directory
+
+```
+scp -3 student@10.10.10.10:/home/client/myfile.txt admin@10.10.11.0:/user/admin/stuff
+```
+grabs file from `10.10.10.10` and sends it to `10.10.11.0`
+
+Note: you will have to sign into both machines
