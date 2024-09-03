@@ -10,20 +10,27 @@ echo "message" | xxd
 ```
 
 ```
-xxd -r file-encoded.txt file-decodedd
+xxd -r file-encoded.txt file-decoded
 ```
 
-hex
+## Examples
+
+```
+$ echo "Hex encoding test" | xxd -p
+48657820656e636f64696e6720746573740a
+$ echo "48657820656e636f64696e6720746573740a" | xxd -r -p
+Hex encoding test
+```
+converting a string into and out of raw hexadecimal format `-p`
 
 
-
-## Base64
-### via terminal
+# Base64
+## via terminal
 ```
 base64 file.txt > file-encoded.txt
 base64 -d file-encoded.txt > file-decoded.txt
 ```
-### via python
+## via python
 ```
 import base64
 # <insert code here>
