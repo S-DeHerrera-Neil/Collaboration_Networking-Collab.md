@@ -70,6 +70,7 @@ ssh user@host
 ## Remote (Reverse) Tunnel
 ![Remote](https://github.com/user-attachments/assets/6d037e08-f937-447c-9ad8-db540ab632a6)
 
+In the provided Example a firewall prevents further tunnelling via SSH, this is avoided by going past the firewall via telnet and setting up a SSH Tunnel via a non-standard port to allow the traffic through
 
 ## Multi Tunnel
 
