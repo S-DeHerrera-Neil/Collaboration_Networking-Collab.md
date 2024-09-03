@@ -11,11 +11,16 @@ scp -P 1111 secretstuff.txt student@localhost:/home/student
 
 ## Dynamic Port Forward
 ```
-ssh student@172.16.82.106 -D 9050 -NT
+ssh <user>@<server ip> -p <alt port> -D <port> -NT
+or
+ssh -D <port> -p <alt port> <user>@<server ip> -NT
 ```
-forwards traffic on local port 9050 to remote host 172.16.82.106
+Proxychains default port is 9050
 
-Example usage of port (proxychains uses port 9050 by default):
+Creates a dynamic socks4 proxy that interacts alone, or with a previously established remote or local port forward.
+
+Allows the use of scripts and other userspace programs through the tunnel
+
 ```
 proxychains scp student@localhost:secretstuff.txt .
 proxychains scp secretstuff.txt student@localhost:
