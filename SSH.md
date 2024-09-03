@@ -124,7 +124,7 @@ firefox http://localhost:2280
 ## Forward Through Tunnel
 
 Note: In most cases the second tunnel is redundant
-### Example 3
+### Example 1
 ```
 # Creates the Tunnel
 ssh student@172.16.1.15 -L 2222:172.16.40.10:22
@@ -135,3 +135,22 @@ ssh student@localhost -p 2222 -L 3322:172.16.82.106:22
 ssh student@localhost -p 3322
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/doublelocal1.png)
+
+## Dynamic Port Forwarding
+
+```
+ssh <user>@<server ip> -p <alt port> -D <port> -NT
+```
+Uses proxy chain default port is 9050
+
+### Step 1
+```
+ssh student@172.16.1.15 -D 9050
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/dynamic1.png)
+### Step 2
+```
+ssh student@172.16.1.15 -L 2222:172.16.40.10:22
+ssh student@localhost -p 2222 -D 9050
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/dynamic2.png)
