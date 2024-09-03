@@ -64,7 +64,7 @@ ssh user@host
 - `-R` Creates the port on the server mapped to a ip:port via the client
 - `-NT` Do not execute a remote command and disable pseudo-tty (will hang window)
 
-## Port Forwarding 
+## Local Port to Localhost of Server
 
 ### Example 1
 ```
@@ -87,3 +87,25 @@ telnet localhost 1123
 ```
 
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local2.png)
+
+## Local Port to Remote Target Via Server
+### Example 1
+```
+# Creates the Tunnel
+ssh student@172.16.1.15 -L 2222:172.16.40.10:22
+```
+```
+# Uses the Tunnel to SSH
+ssh student@localhost -p 2222
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local4.png)
+### Example 2
+```
+# Creates the Tunnel
+
+```
+```
+# Uses the Tunnel to SSH
+
+```
+![alt]()
