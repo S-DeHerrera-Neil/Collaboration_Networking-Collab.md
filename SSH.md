@@ -69,8 +69,6 @@ ssh user@host
 ```
 # Creates Tunnel
 ssh student@172.16.1.15 -L 1122:localhost:22
-or
-ssh -L 1122:localhost:22 student@172.16.1.15
 ```
 ```
 # Uses the tunnel to SSH
@@ -78,4 +76,13 @@ ssh student@localhost -p 1122
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local1.png)
 
+```
+# Creates Tunnel
+ssh student@172.16.1.15 -L 1123:localhost:23
+```
+```
+# Uses the tunnel for telnet
+telnet localhost 1123
+```
 
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local2.png)
