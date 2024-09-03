@@ -40,4 +40,11 @@ Designed to fix the issues with Active FTP
 - TCP 22
 - Adds FTP like features to SSH
 
-##
+## SCP
+- TCP 22
+- Allows simple file transfer (think TFTP) via SSH
+
+```
+scp /home/scpuser/myfile.txt student@10.10.10.10:/home/client/ # sends file from local machine to remote client
+scp student@10.10.10.10:/home/client/myfile.txt . # grabs file from remote client to present working directory
+```
