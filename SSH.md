@@ -143,13 +143,14 @@ ssh <user>@<server ip> -p <alt port> -D <port> -NT
 ```
 Uses proxy chain default port is 9050
 
-### Step 1
+### Proxy chain example
 ```
+# First tunnel
 ssh student@172.16.1.15 -D 9050
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/dynamic1.png)
-### Step 2
 ```
+# Second Tunnel
 ssh student@172.16.1.15 -L 2222:172.16.40.10:22
 ssh student@localhost -p 2222 -D 9050
 ```
