@@ -136,21 +136,20 @@ ssh student@localhost -p 3322
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/doublelocal1.png)
 
-## Dynamic Port Forwarding
+## Dynamic Port Forwarding (Proxy chains)
 
 ```
 ssh <user>@<server ip> -p <alt port> -D <port> -NT
 ```
 Uses proxy chain default port is 9050
 
-### Proxy chain example
+### Example 3
 ```
-# First tunnel
 ssh student@172.16.1.15 -D 9050
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/dynamic1.png)
+### Example 2
 ```
-# Second Tunnel
 ssh student@172.16.1.15 -L 2222:172.16.40.10:22
 ssh student@localhost -p 2222 -D 9050
 ```
