@@ -72,6 +72,15 @@ ssh user@host
 
 In the provided Example a firewall prevents further tunnelling via SSH, this is avoided by going past the firewall via telnet and setting up a SSH Tunnel via a non-standard port to allow the traffic through
 
+```
+# Initial Telnet Traffic to Blue_DMZ_Host-1
+telnet student@172.16.1.15
+# Tunnel setup from 172.16.1.15
+ssh student@10.10.0.40 -R 2222:localhost:22
+# Once the tunnel is setup we can traverse past the firewall with the following syntax
+ssh student@127.0.0.1:2222
+```
+
 ## Multi Tunnel
 
 ## Proxychains
