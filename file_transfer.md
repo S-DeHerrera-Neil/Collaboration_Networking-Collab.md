@@ -21,8 +21,9 @@
 - creates a shell on the FTP host which allows you to traverse directories
 
 ### Active (Default)
-![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/ftp_active.png)
 Unsafe because FTP server initiates communication
+![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/ftp_active.png)
+
 
 ### Passive
 ![alt](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/ftp_passive.png)
