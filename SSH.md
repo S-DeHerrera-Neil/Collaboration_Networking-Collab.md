@@ -66,7 +66,7 @@ ssh user@host
 
 ## Local Port to Localhost of Server
 
-### Example 1
+### Example 1 (Tunnel for SSH)
 ```
 # Creates Tunnel
 ssh student@172.16.1.15 -L 1122:localhost:22
@@ -76,7 +76,7 @@ ssh student@172.16.1.15 -L 1122:localhost:22
 ssh student@localhost -p 1122
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local1.png)
-### Example 2
+### Example 2 (Tunnel for Telnet)
 ```
 # Creates Tunnel
 ssh student@172.16.1.15 -L 1123:localhost:23
@@ -89,7 +89,7 @@ telnet localhost 1123
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local2.png)
 
 ## Local Port to Remote Target Via Server
-### Example 1
+### Example 1 (Tunnel for SSH)
 ```
 # Creates the Tunnel
 ssh student@172.16.1.15 -L 2222:172.16.40.10:22
@@ -99,7 +99,7 @@ ssh student@172.16.1.15 -L 2222:172.16.40.10:22
 ssh student@localhost -p 2222
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local4.png)
-### Example 2
+### Example 2 (Tunnel for Telnet)
 ```
 # Creates the Tunnel
 ssh student@172.16.1.15 -L 2223:172.16.40.10:23
@@ -110,7 +110,7 @@ telnet localhost 2223
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local5.png)
 
-### Example 3
+### Example 3 (Tunnel for web browser)
 ```
 # Creates the Tunnel
 ssh student@172.16.1.15 -L 2280:172.16.40.10:80
