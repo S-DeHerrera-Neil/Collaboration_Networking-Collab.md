@@ -14,7 +14,7 @@
 - Insecure
 - Simple with limited functionality
 
-## FTP
+## [FTP](https://ss64.com/bash/ftp.html)
 - RC 959
 - TCP 20 (control), TCP 21 (data)
 - requires login, but login information is plaintext
@@ -40,7 +40,7 @@ Designed to fix the issues with Active FTP
 - TCP 22
 - Adds FTP like features to SSH
 
-## SCP
+## [SCP](https://ss64.com/bash/scp.html)
 - TCP 22
 - Allows simple file transfer (think TFTP) via SSH
 
@@ -54,7 +54,9 @@ Options:
 - `-v` verbose mode
 - `-P` alternate port
 - `-r` recursively copy directory
-- `-3` 3-way copy (use when copying a file from one remote host to another remote host)
+- `-3` 3-way copy (instead of copying directly between 2 hosts, the file is downloaded to local host then sent from local host)
+  - Remote host 1 -> Local Machine
+  - Local Machine -> Remote host 2
 
 ### Examples
 ```
@@ -68,8 +70,19 @@ scp student@10.10.10.10:/home/client/myfile.txt .
 grabs file from remote client to present working directory
 
 ```
+scp student@10.10.10.10:/home/client/myfile.txt admin@10.10.11.0:/user/admin/stuff
+```
+from `10.10.10.10` `myfile.txt` is sent directly to `10.10.11.0`
+
+```
 scp -3 student@10.10.10.10:/home/client/myfile.txt admin@10.10.11.0:/user/admin/stuff
 ```
-grabs file from `10.10.10.10` and sends it to `10.10.11.0`
+grabs file from `10.10.10.10` downloads it to local machine, then from the local machine it sends the file to `10.10.11.0`
 
 Note: you will have to sign into both machines
+
+```
+proxychains scp student@localhost:secretstuff.txt .
+proxychains scp secretstuff.txt student@localhost:
+```
+Use proxychains to scp over a port forward
