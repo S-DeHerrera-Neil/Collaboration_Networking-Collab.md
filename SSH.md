@@ -160,7 +160,7 @@ ssh student@localhost -p 2222 -D 9050
 ```
 ssh -p <optional alt port> <user>@<server ip> -R <remote bind port>:<tgt ip>:<tgt port> -NT
 ```
-![SSH_Tunnels](https://github.com/user-attachments/assets/7aa378b6-8a23-4bb0-aa93-2f3432daa88f)
+![SSH_Tunnels(1)](https://github.com/user-attachments/assets/3fd71ea6-2e4a-4dd7-8cf5-ce20fbc0ff04)
 
 
 ### Example 1 (Tunnel for SSH)
