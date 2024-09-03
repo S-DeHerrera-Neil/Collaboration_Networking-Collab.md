@@ -122,16 +122,13 @@ firefox http://localhost:2280
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local6.png)
 
 ## Forward Through Tunnel
+
+Note: In most cases the second tunnel is redundant
 ### Example 3
 ```
 # Creates the Tunnel
 ssh student@172.16.1.15 -L 2222:172.16.40.10:22
 ssh student@localhost -p 2222 -L 3322:172.16.82.106:22
-
-```
-Note: The second tunnel is redundant an the whole command can be replaced with:
-```
-ssh student@172.16.1.15 -L 3322:172.16.40.10:23
 ```
 ```
 # Uses the Tunnel to SSH
