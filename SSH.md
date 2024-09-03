@@ -66,6 +66,7 @@ ssh user@host
 
 ## Port Forwarding 
 
+### Example 1
 ```
 # Creates Tunnel
 ssh student@172.16.1.15 -L 1122:localhost:22
@@ -75,7 +76,7 @@ ssh student@172.16.1.15 -L 1122:localhost:22
 ssh student@localhost -p 1122
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local1.png)
-
+### Example 2
 ```
 # Creates Tunnel
 ssh student@172.16.1.15 -L 1123:localhost:23
