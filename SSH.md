@@ -52,4 +52,29 @@ to fix this, run:
 ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
 ```
 
-# SSH Command
+# Command Syntax
+
+```
+ssh user@host
+```
+
+## Options
+- `-L` Creates a port on the client mapped to a ip:port via the server
+- `-D` Creates a port on the client and sets up a SOCKS4 proxy tunnel where the target ip:port is specified dynamically
+- `-R` Creates the port on the server mapped to a ip:port via the client
+- `-NT` Do not execute a remote command and disable pseudo-tty (will hang window)
+
+## Port Forwarding 
+
+```
+Internet_Host:
+ssh student@172.16.1.15 -L 1122:localhost:22
+or
+ssh -L 1122:localhost:22 student@172.16.1.15
+```
+```
+Internet_Host:
+ssh student@localhost -p 1122
+Blue_DMZ_Host-1~$
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local1.png)
