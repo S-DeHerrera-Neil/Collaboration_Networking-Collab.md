@@ -93,19 +93,32 @@ ssh -D <port> -p <alt port> <user>@<server ip> -NT
 ```
 Dynamic Port Forwarding
 
-
-    Proxychains default port is 9050
-
-    Creates a dynamic socks4 proxy that interacts alone, or with a previously established remote or local port forward.
-
-    Allows the use of scripts and other userspace programs through the tunnel.
-
-SSH Dynamic Port Forwarding 1-Step
-
 ```
-ssh -p <optional alt port> <user>@<server ip> -R <remote bind port>:<tgt ip>:<tgt port> -NT
-
+Internet_Host:
+ssh student@172.16.1.15 -L 2222:172.16.40.10:22
 or
-
-ssh -R <remote bind port>:<tgt ip>:<tgt port> -p <alt port> <user>@<server ip> -NT
+ssh -L 2222:172.16.40.10:22 student@172.16.1.15
 ```
+```
+Internet_Host:
+ssh student@localhost -p 2222
+Blue_INT_DMZ_Host-1~$
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local4.png)
+
+Local Port Forward to remote target via server
+
+
+```
+Internet_Host:
+ssh student@172.16.1.15 -L 2222:172.16.40.10:22
+ssh student@localhost -p 2222 -L 3322:172.16.82.106:22
+```
+```
+Internet_Host:
+ssh student@localhost -p 3322
+Blue_Host-1~$
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/doublelocal1.png)
+
+Forward through Tunnel
