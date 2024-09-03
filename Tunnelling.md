@@ -26,22 +26,16 @@ proxychains scp secretstuff.txt student@localhost:
 ## Ipv6 over Ipv4
 
 RFC 3056
-    Permits IPv6 to be encapsulated in order to move through a IPv4 network
-
-    Done by the Dual Stack Router
-
-    Payload is not generally encrypted
-
-    IPSEC commonly used to secure the payloads
+- Permits IPv6 to be encapsulated in order to move through a IPv4 network
+- Done by the Dual Stack Router
+- Payload is not generally encrypted
+- IPSEC commonly used to secure the payloads
 
 ## Dual Stack
-    Configures an IPv4 and IPv6 address on all devices
-
-    Resource intensive
-
-    Allows for IPv4 and IPv6 routing because it has the addresses already set
-
-    Can use both but not interchangeably
+- Configures an IPv4 and IPv6 address on all devices
+- Resource intensive
+- Allows for IPv4 and IPv6 routing because it has the addresses already set
+- Can use both but not interchangeably
 
 ## SSH Tunnels
 
