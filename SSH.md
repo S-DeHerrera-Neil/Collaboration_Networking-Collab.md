@@ -143,7 +143,7 @@ ssh <user>@<server ip> -p <alt port> -D <port> -NT
 ```
 Uses proxy chain default port is 9050
 
-### Example 3
+### Example 1
 ```
 ssh student@172.16.1.15 -D 9050
 ```
@@ -154,3 +154,20 @@ ssh student@172.16.1.15 -L 2222:172.16.40.10:22
 ssh student@localhost -p 2222 -D 9050
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/dynamic2.png)
+
+## Remote Port Forwarding (Proxy chains)
+
+```
+ssh -p <optional alt port> <user>@<server ip> -R <remote bind port>:<tgt ip>:<tgt port> -NT
+```
+
+### Example 1
+```
+# Create Tunnel
+ssh student@10.10.0.40 -R 4422:localhost:22
+```
+```
+# User Tunnel for SSH
+ssh student@localhost -p 4422
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/remote1.png)
