@@ -67,14 +67,16 @@ ssh user@host
 ## Port Forwarding 
 
 ```
-Internet_Host:
 ssh student@172.16.1.15 -L 1122:localhost:22
 or
 ssh -L 1122:localhost:22 student@172.16.1.15
 ```
+Creates Tunnel
+
 ```
-Internet_Host:
 ssh student@localhost -p 1122
-Blue_DMZ_Host-1~$
 ```
+Uses the tunnel to SSH
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local1.png)
+
+
