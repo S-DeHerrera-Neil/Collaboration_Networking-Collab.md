@@ -110,7 +110,7 @@ telnet localhost 2223
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local5.png)
 
-### Example 3 (Tunnel for web browser)
+### Example 3 (Tunnel for Web Browser)
 ```
 # Creates the Tunnel
 ssh student@172.16.1.15 -L 2280:172.16.40.10:80
