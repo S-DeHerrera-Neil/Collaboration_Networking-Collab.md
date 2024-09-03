@@ -161,7 +161,7 @@ ssh student@localhost -p 2222 -D 9050
 ssh -p <optional alt port> <user>@<server ip> -R <remote bind port>:<tgt ip>:<tgt port> -NT
 ```
 
-### Example 1
+### Example 1 (Tunnel for SSH)
 ```
 # Create Tunnel
 ssh student@10.10.0.40 -R 4422:localhost:22
@@ -171,3 +171,25 @@ ssh student@10.10.0.40 -R 4422:localhost:22
 ssh student@localhost -p 4422
 ```
 ![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/remote1.png)
+
+### Example 2 (Tunnel for Telnet)
+```
+# Create Tunnel
+ssh student@10.10.0.40 -R 4423:localhost:23
+```
+```
+# User Tunnel for Telnet
+telnet localhost 4423
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/remote2.png)
+
+### Example 3 (Tunnel for Web Browser)
+```
+# Create Tunnel
+ssh student@10.10.0.40 -R 4480:localhost:80
+```
+```
+# User Tunnel for Firefox
+firefox http://localhost:4480
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/remote3.png)
