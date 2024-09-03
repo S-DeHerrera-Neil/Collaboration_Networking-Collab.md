@@ -102,10 +102,34 @@ ssh student@localhost -p 2222
 ### Example 2
 ```
 # Creates the Tunnel
+ssh student@172.16.1.15 -L 2223:172.16.40.10:23
+```
+```
+# Uses the Tunnel for telnet
+telnet localhost 2223
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local5.png)
 
+### Example 3
+```
+# Creates the Tunnel
+ssh student@172.16.1.15 -L 2280:172.16.40.10:80
 ```
 ```
 # Uses the Tunnel to SSH
-
+firefox http://localhost:2280
 ```
-![alt]()
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/local6.png)
+
+## Forward Through Tunnel
+### Example 3
+```
+# Creates the Tunnel
+ssh student@172.16.1.15 -L 2222:172.16.40.10:22
+ssh student@localhost -p 2222 -L 3322:172.16.82.106:22
+```
+```
+# Uses the Tunnel to SSH
+ssh student@localhost -p 3322
+```
+![alt](https://git.cybbh.space/net/public/-/raw/master/networking/modules/08_tunneling/assets/images/doublelocal1.png)
