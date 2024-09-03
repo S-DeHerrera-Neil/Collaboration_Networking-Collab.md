@@ -55,8 +55,8 @@ Options:
 - `-P` alternate port
 - `-r` recursively copy directory
 - `-3` 3-way copy (instead of copying directly between 2 hosts, the file is downloaded to local host then sent from local host)
-  - Remote host 1 -> Local Machine
-  - Local Machine -> Remote host 2
+  - Remote host 1 -> Localhost
+  - Localhost -> Remote host 2
 
 ### Examples
 ```
@@ -74,12 +74,15 @@ scp student@10.10.10.10:/home/client/myfile.txt admin@10.10.11.0:/user/admin/stu
 ```
 from `10.10.10.10` `myfile.txt` is sent directly to `10.10.11.0`
 
+`10.10.10.10` -> `10.10.11.0`
+
 ```
 scp -3 student@10.10.10.10:/home/client/myfile.txt admin@10.10.11.0:/user/admin/stuff
 ```
 grabs file from `10.10.10.10` downloads it to local machine, then from the local machine it sends the file to `10.10.11.0`
 
-Note: you will have to sign into both machines
+`10.10.10.10` -> localhost
+localhost -> `10.10.11.0`
 
 ```
 proxychains scp student@localhost:secretstuff.txt .
