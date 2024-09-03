@@ -65,10 +65,10 @@ ssh user@host
 - `-NT` Do not execute a remote command and disable pseudo-tty (will hang window)
 
 ## Local Tunnel
-![Screenshot from 2024-09-03 16-55-18](https://github.com/user-attachments/assets/37ac0e32-e280-43f7-b846-de3fd90f359f)
+![Local](https://github.com/user-attachments/assets/fbfd5351-e14a-4d13-a082-70069532054b)
 
 ## Remote (Reverse) Tunnel
-![Screenshot from 2024-09-03 16-59-12](https://github.com/user-attachments/assets/bf6107db-527f-476b-b004-13518274559f)
+![Remote](https://github.com/user-attachments/assets/6d037e08-f937-447c-9ad8-db540ab632a6)
 
 
 ## Multi Tunnel
