@@ -67,6 +67,9 @@ ssh [user@]{host} [-L localport:send_traffic_to:destport] [-R remoteport:send_tr
 # Local Tunnel `-L`
 ## End-to-End
 ![Local_Tunnel_SSH_End-to-End](https://github.com/user-attachments/assets/a876de72-44bd-4824-ada1-a4c5b3af61f7)
+```
+internet Host> ssh netX_studentXX@172.16.1.15 -L 1111:127.0.0.1:22
+```
 
 ## Forwarding
 ![Local_Tunnel_SSH_Forwarding](https://github.com/user-attachments/assets/aaeb5452-42d3-41c8-977f-7ebe039b6f58)
