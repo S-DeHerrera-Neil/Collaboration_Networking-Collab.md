@@ -41,11 +41,7 @@ Please contact your system administrator.
 Add correct host key in /home/student/.ssh/known_hosts to get rid of this message.
 Offending ECDSA key in /home/student/.ssh/known_hosts:1
 remove with:
-```
-```
-ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
-```
-```
+ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106" <<<< THIS IS THE COMMAND TO REMOVE THIS ERROR MESSAGE
 ECDSA host key for 172.16.82.106 has changed and you have requested strict checking.
 Host key verification failed.
 ```
