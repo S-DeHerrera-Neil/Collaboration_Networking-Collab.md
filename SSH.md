@@ -150,8 +150,7 @@ Explanation
 ssh netX_studentXX@127.0.0.1 -p 1111 -L 2222 127.0.0.1:21000
 ```
 Explanation
-- Effectively
-- we are sending the traffic thru the first tunnel with `netX_studentXX@127.0.0.1 -p 1111`
+-We are sending the traffic thru the first tunnel with `netX_studentXX@127.0.0.1 -p 1111`
 - then we send it through the second tunnel via `-L 2222 127.0.0.1:21000`
 - and the entrance for this new tunnel is `127.0.0.1:2222`
 ## Tunnel-in-a-tunnel
