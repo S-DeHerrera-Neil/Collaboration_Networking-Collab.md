@@ -55,7 +55,7 @@ ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
 # Command Syntax
 
 ```
-ssh user@host [-L localport:send_traffic_to:destport] [-R remoteport:send_traffic_to:destport] [-D 9050] [-NT]
+ssh [user@]{host} [-L localport:send_traffic_to:destport] [-R remoteport:send_traffic_to:destport] [-D 9050] [-NT]
 ```
 
 ## Options
