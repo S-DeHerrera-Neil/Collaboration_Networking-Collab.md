@@ -47,7 +47,7 @@ Host key verification failed.
 ```
 This is what it looks like when the key is changed
 
-to fix this, run:
+to fix this, run the provided command which in this example is:
 ```
 ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
 ```
@@ -55,7 +55,7 @@ ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
 # Command Syntax
 
 ```
-ssh user@host
+ssh user@host [-L localport:send_traffic_to:destport] [-R remoteport:send_traffic_to:destport] [-D 9050] [-NT]
 ```
 
 ## Options
