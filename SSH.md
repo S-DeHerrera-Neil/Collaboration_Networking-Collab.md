@@ -71,7 +71,7 @@ ssh [user@]{host} [-L localport:send_traffic_to:destport] [-R remoteport:send_tr
 ## Forwarding
 ![Local_Tunnel_SSH_Forwarding](https://github.com/user-attachments/assets/aaeb5452-42d3-41c8-977f-7ebe039b6f58)
 
-# Remote Tunnel
+# Remote Tunnel `-R`
 ## End-to-End
 ![Remote_Tunnel_SSH_End-to-End](https://github.com/user-attachments/assets/3a78630b-4699-4973-b7d8-66740b57153e)
 
