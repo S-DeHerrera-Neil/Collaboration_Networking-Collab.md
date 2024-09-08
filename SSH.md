@@ -64,25 +64,25 @@ ssh user@host
 - `-R` Creates the port on the server mapped to a ip:port via the client
 - `-NT` Do not execute a remote command and disable pseudo-tty (will hang window)
 
-## Local Tunnel
-![Local](https://github.com/user-attachments/assets/fbfd5351-e14a-4d13-a082-70069532054b)
+# Local Tunnel
+## End-to-End
+![Local_Tunnel_SSH_End-to-End](https://github.com/user-attachments/assets/a876de72-44bd-4824-ada1-a4c5b3af61f7)
 
-## Remote (Reverse) Tunnel
-![Remote](https://github.com/user-attachments/assets/6d037e08-f937-447c-9ad8-db540ab632a6)
+## Forwarding
+![Local_Tunnel_SSH_Forwarding](https://github.com/user-attachments/assets/aaeb5452-42d3-41c8-977f-7ebe039b6f58)
 
-In the provided Example a firewall prevents further tunnelling via SSH, this is avoided by going past the firewall via telnet and setting up a SSH Tunnel via a non-standard port to allow the traffic through
+# Remote Tunnel
+## End-to-End
+![Remote_Tunnel_SSH_End-to-End](https://github.com/user-attachments/assets/3a78630b-4699-4973-b7d8-66740b57153e)
 
-```
-# Initial Telnet Traffic to Blue_DMZ_Host-1
-telnet student@172.16.1.15
-# Tunnel setup from 172.16.1.15
-ssh student@10.10.0.40 -R 2222:localhost:22
-# Once the tunnel is setup we can traverse past the firewall with the following syntax
-ssh student@127.0.0.1:2222
-```
+## Forwarding
+![Remote_Tunnel_SSH_Forwarding](https://github.com/user-attachments/assets/65ca38f5-fdfc-41f4-a9df-9359f0c7518d)
 
-## Multi Tunnel
-![Multi](https://github.com/user-attachments/assets/53d73afb-d043-41c4-8040-151f5879d42a)
+# Complex Scenarios
+## Joining Tunnels
+![Joining_Tunnels](https://github.com/user-attachments/assets/c72aa4b8-ded0-4dd7-a423-598f35cb9e0b)
 
-## Proxychains
+## Tunnel-in-a-tunnel
+![Tunnel_in_a_Tunnel](https://github.com/user-attachments/assets/4c949f6c-d0d6-44e7-9fa3-c95d5df4e39d)
+
 
