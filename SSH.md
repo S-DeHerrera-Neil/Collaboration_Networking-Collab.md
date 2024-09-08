@@ -71,7 +71,7 @@ ssh [user@]{host} [-L localport:send_traffic_to:destport] [-R remoteport:send_tr
 internet Host> ssh netX_studentXX@172.16.1.15 -L 1111:127.0.0.1:22
 ```
 Explanation
-- This command creates an ssh tunnel to user `netX_studentXX` on `172.16.1.15`
+- This command creates an ssh tunnel to user `netX_studentXX` on `172.16.1.15` (BLUE_DMZ_Host-1)
 - The `-L` specifies that a port `1111` will be opened on your "local" machine, which in this case is the internet host
 - The `127.0.0.1` states where the traffic will be forwarded after it reaches the BLUE_DMZ_Host_1, in this case we want to keep it on the DMZ_Host so we give a loopback ip
 - The `22` specifies the destination port
@@ -103,14 +103,57 @@ Explanation
 # Remote Tunnel `-R`
 ## End-to-End
 ![Remote_Tunnel_SSH_End-to-End](https://github.com/user-attachments/assets/3a78630b-4699-4973-b7d8-66740b57153e)
-
+```
+internet host> telnet 172.16.1.15
+```
+Explanation
+- This is to get access to the .15 machine
+```
+BLUE_DMZ_Host-1> ssh student@10.10.0.40 -R 1111:127.0.0.1:22
+```
+Explanation
+- This command creates an ssh tunnel to user `student` on `10.10.0.40` (internet host)
+- The `-R` specifies that a port `1111` will be opened on the remote machine (the machine we are sshing to), which in this case is the internet host
+- The `127.0.0.1` states where the traffic will be forwarded after it reaches our machine, in this case we want to keep it on our machine (BLUE_DMZ_Host-1) so we give a loopback ip
+- The `22` specifies the destination port, in reference to the DMZ_Host
+```
+Internet Host> ssh netX_studentXX@127.0.0.1 -p 1111 -D 9050
+```
+Explanation
+- This command creates a dynamic tunnel through an existing tunnel accessed via the internet host loopback `127.0.0.1` on port `1111`
+- The `-D 9050` specifies we will be sending data from port 9050 (which is the default port for proxychains)
 ## Forwarding
 ![Remote_Tunnel_SSH_Forwarding](https://github.com/user-attachments/assets/65ca38f5-fdfc-41f4-a9df-9359f0c7518d)
-
+```
+internet host> telnet 172.16.1.15
+```
+Explanation
+- This is to get access to the .15 machine
+```
+BLUE_DMZ_Host-1> ssh student@10.10.0.40 -R 1111:172.16.40.10:22
+```
+Explanation
+- This command creates an ssh tunnel to user `student` on `10.10.0.40` (internet host)
+- The `-R` specifies that a port `1111` will be opened on the remote machine (the machine we are sshing to), which in this case is the internet host
+- The `172.16.40.10` states where the traffic will be forwarded after it reaches our machine, in this case we want to send it to the BLUE_INT_DMZ_Host-1 or `172.16.40.10`
+- The `22` specifies the destination port, in reference to the BLUE_INT_DMZ_Host-1
+```
+Internet Host> ssh netX_studentXX@127.0.0.1 -p 1111 -D 9050
+```
+Explanation
+- This command creates a dynamic tunnel through an existing tunnel accessed via the internet host loopback `127.0.0.1` on port `1111`
+- The `-D 9050` specifies we will be sending data from port 9050 (which is the default port for proxychains)
 # Complex Scenarios
 ## Joining Tunnels
 ![Joining_Tunnels](https://github.com/user-attachments/assets/c72aa4b8-ded0-4dd7-a423-598f35cb9e0b)
-
+```
+ssh netX_studentXX@127.0.0.1 -p 1111 -L 2222 127.0.0.1:21000
+```
+Explanation
+- Effectively
+- we are sending the traffic thru the first tunnel with `netX_studentXX@127.0.0.1 -p 1111`
+- then we send it through the second tunnel via `-L 2222 127.0.0.1:21000`
+- and the entrance for this new tunnel is `127.0.0.1:2222`
 ## Tunnel-in-a-tunnel
 ![Tunnel_in_a_Tunnel](https://github.com/user-attachments/assets/4c949f6c-d0d6-44e7-9fa3-c95d5df4e39d)
 
