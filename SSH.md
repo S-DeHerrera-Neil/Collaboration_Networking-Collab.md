@@ -64,7 +64,7 @@ ssh [user@]{host} [-L localport:send_traffic_to:destport] [-R remoteport:send_tr
 - `-R` Creates the port on the server mapped to a ip:port via the client
 - `-NT` Do not execute a remote command and disable pseudo-tty (will hang window)
 
-# Local Tunnel
+# Local Tunnel `-L`
 ## End-to-End
 ![Local_Tunnel_SSH_End-to-End](https://github.com/user-attachments/assets/a876de72-44bd-4824-ada1-a4c5b3af61f7)
 
