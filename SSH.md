@@ -70,6 +70,18 @@ ssh [user@]{host} [-L localport:send_traffic_to:destport] [-R remoteport:send_tr
 ```
 internet Host> ssh netX_studentXX@172.16.1.15 -L 1111:127.0.0.1:22
 ```
+Explanation
+- This command creates an ssh tunnel to `netX_studentXX@172.16.1.15`
+- The `-L` specifies that a port `1111` will be opened on your "local" machine, which in this case is the internet host
+- The `127.0.0.1` states where the traffic will be forwarded after it reaches the BLUE_DMZ_Host_1, in this case we want to keep it on the DMZ_Host so we give a loopback ip
+- The `22` specifies the destination port
+
+```
+internet Host> ssh netX_studentXX@127.0.0.1 -p 1111 -D 9050
+```
+Explanation
+- This command creates a dynamic tunnel through an existing tunnel accessed via `netX_studentXX@127.0.0.1` on port `1111`
+- The `-D 9050` specifies we will be sending data from port 9050 (which is the default port for proxychains)
 
 ## Forwarding
 ![Local_Tunnel_SSH_Forwarding](https://github.com/user-attachments/assets/aaeb5452-42d3-41c8-977f-7ebe039b6f58)
