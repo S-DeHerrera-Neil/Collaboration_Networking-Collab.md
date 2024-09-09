@@ -105,3 +105,14 @@ nft add chain [family] [table] [chain] { type [type] hook [hook]
 
  Use "\" to escape the ";" in bash
 ### 3. Create a rule in the chain
+```
+nft add rule [family] [table] [chain] [matches (matches)] [statement]
+```
+* [matches] = typically protocol headers(i.e. ip, ip6, tcp,
+            udp, icmp, ether, etc)
+
+* (matches) = these are specific to the [matches] field.
+
+* [statement] = action performed when packet is matched. Some
+              examples are: log, accept, drop, reject,
+              counter, nat (dnat, snat, masquerade)
