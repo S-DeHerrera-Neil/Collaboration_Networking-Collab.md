@@ -32,7 +32,10 @@ sudo iptables -A INPUT -p tcp -m multiport --ports 22,23,3389 -m state --state N
 sudo iptables -A OUTPUT -p tcp -m multiport --ports 22,23,3389 -m state --state NEW,ESTABLISHED -j ACCEPT
 ```
 Enable SSH,Telnet,RDP both ways
-
+```
+sudo iptables -P chain [ACCEPT | DROP | REJECT ]
+```
+Default policy for each chain
 
 
 # Chain Flow
