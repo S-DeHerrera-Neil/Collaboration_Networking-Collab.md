@@ -9,7 +9,7 @@ Positional Arguments
 - Delete `-D chain num` deletes the rule at the specified position
 - Flush `-F chain` deletes all rules in the chain
 
-Port, Protocol, Flags:
+Port, Protocol, Flags: ( EVERYTHING IS BOTH WAYS UNLESS OTHERWISE SPECIFIED )
 - `-p icmp [ --icmp-type type# { /code# } ]`
 - `-p [tcp|udp] [ --sport XX | --dport XX ]`
 - `-p [tcp|udp] -m multiport [ --dports | --sports | --ports ] 22,23,389`
