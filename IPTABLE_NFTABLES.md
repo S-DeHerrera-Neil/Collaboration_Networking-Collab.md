@@ -116,3 +116,28 @@ nft add rule [family] [table] [chain] [matches (matches)] [statement]
 * [statement] = action performed when packet is matched. Some
               examples are: log, accept, drop, reject,
               counter, nat (dnat, snat, masquerade)
+### Rule Match Options'
+ip [ saddr | daddr { ip | ip1-ip2 | ip/CIDR | ip1, ip2, ip3 } ]
+
+tcp flags { syn, ack, psh, rst, fin }
+
+tcp [ sport | dport { port1 | port1-port2 | port1, port2, port3 } ]
+
+udp [ sport| dport { port1 | port1-port2 | port1, port2, port3 } ]
+
+icmp [ type | code { type# | code# } ]
+
+ct state { new, established, related, invalid, untracked }
+
+iif [iface]
+
+oif [iface]
+
+## Modify NFTABLES
+nft { list | flush } ruleset
+
+nft { delete | list | flush } table [family] [table]
+
+nft { delete | list | flush } chain [family] [table] [chain]
+
+## 
