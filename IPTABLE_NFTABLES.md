@@ -8,11 +8,20 @@ Positional Arguments
 - Insert `-I chain` by default this inserts the rule at the top of the chain, however by adding a number `-I chain num` it will replace the rule at the specified number
 - Delete `-D chain num` deletes the rule at the specified position
 
-Rule Formatting
+Port, Protocol, Flags:
 - `-p icmp [ --icmp-type type# { /code# } ]`
 - `-p tcp [ --sport | --dport 1,2,3,4 ]`
 - `-p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]`
 - `-p udp [ --sport | --dport 1,2,3,4 ]`
+
+State:
+- `-m state --state NEW,ESTABLISHED,RELATED,UNTRACKED,INVALID`
+
+Source, Destination:
+- `-s [ ip.add | network/CIDR ]`
+- `-d [ ip.add | network/CIDR ]`
+- `-m iprange [ --src-range | --dst-range { ip1-ip2 } ]`
+- `-m mac [ --mac-source | --mac-destination ] [mac]`
 
 ```
 sudo iptables -F {chain}
@@ -67,16 +76,15 @@ iptables -t [table] -A [chain] [rules] -j [action]
 
 -i [ iface ]
 -o [ iface ]
--s [ ip.add | network/CIDR ]
--d [ ip.add | network/CIDR ]
 
 
 
--m state --state NEW,ESTABLISHED,RELATED,UNTRACKED,INVALID
--m mac [ --mac-source | --mac-destination ] [mac]
+
+
+
 -p [tcp|udp] -m multiport [ --dports | --sports | --ports { port1 | port1:port15 } ]
 -m bpf --bytecode [ 'bytecode' ]
--m iprange [ --src-range | --dst-range { ip1-ip2 } ]
+
 
     ACCEPT - Allow the packet
 
