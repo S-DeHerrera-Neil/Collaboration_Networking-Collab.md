@@ -136,6 +136,11 @@ sudo nft add chain ip FILTER OUTPUT {type filter hook output priority 0 \; polic
 ### 3. Create a rule in the chain
 ```
 nft add rule [family] [table] [chain] [matches (matches)] [statement]
+EXAMPLES:
+sudo nft add rule ip filter INPUT tcp dport {22, 23, 3389} accept
+sudo nft add rule ip filter INPUT tcp sport {22, 23, 3389} accept
+sudo nft add rule ip filter OUTPUT tcp dport {22, 23, 3389} accept
+sudo nft add rule ip filter OUTPUT tcp sport {22, 23, 3389} accept
 ```
 * [matches] = typically protocol headers(i.e. ip, ip6, tcp,
             udp, icmp, ether, etc)
