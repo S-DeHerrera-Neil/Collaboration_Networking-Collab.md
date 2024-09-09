@@ -3,27 +3,36 @@
 ```
 sudo iptables {-A | -I | -D | -F} {chain} [num] {RULES} -j {ACCEPT | DROP | DENY}
 ```
-Positional Arguments
+### Positional Arguments
 - Append `-A chain` this appends the rule to the end of the chain
 - Insert `-I chain` by default this inserts the rule at the top of the chain, however by adding a number `-I chain num` it will replace the rule at the specified number
 - Delete `-D chain num` deletes the rule at the specified position
 - Flush `-F chain` deletes all rules in the chain
 
-Port, Protocol, Flags: ( EVERYTHING IS BOTH WAYS UNLESS OTHERWISE SPECIFIED )
+### Port, Protocol, Flags: ( EVERYTHING IS BOTH WAYS UNLESS OTHERWISE SPECIFIED )
 - `-p icmp [ --icmp-type type# { /code# } ]`
 - `-p [tcp|udp] [ --sport XX | --dport XX ]`
 - `-p [tcp|udp] -m multiport [ --dports | --sports | --ports ] 22,23,389`
 - `-p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]`
 
-State:
+### State:
 - `-m state --state NEW,ESTABLISHED,RELATED,UNTRACKED,INVALID`
 
-Source, Destination:
+### Source, Destination:
 - `-s [ ip.add | network/CIDR ]`
 - `-d [ ip.add | network/CIDR ]`
 - `-m iprange [ --src-range | --dst-range { ip1-ip2 } ]`
 - `-m mac [ --mac-source | --mac-destination ] [mac]`
 
+### Prefab Commands
+```
+sudo iptables -A INPUT -p tcp -m multiport --ports 22,23,389 -m state --state NEW,ESTABLISHED -j ACCEPT
+```
+```
+sudo iptables -A OUTPUT -p tcp -m multiport --ports 22,23,389 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+```
+Enable SSH,Telnet,RDP both ways
 
 
 
