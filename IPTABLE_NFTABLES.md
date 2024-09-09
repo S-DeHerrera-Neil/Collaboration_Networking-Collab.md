@@ -137,10 +137,10 @@ sudo nft add chain ip FILTER OUTPUT {type filter hook output priority 0 \; polic
 ```
 nft add rule [family] [table] [chain] [matches (matches)] [statement]
 EXAMPLES:
-sudo nft add rule ip filter INPUT tcp dport {22, 23, 3389} accept
-sudo nft add rule ip filter INPUT tcp sport {22, 23, 3389} accept
-sudo nft add rule ip filter OUTPUT tcp dport {22, 23, 3389} accept
-sudo nft add rule ip filter OUTPUT tcp sport {22, 23, 3389} accept
+sudo nft add rule ip filter INPUT tcp dport {22, 23, 3389} ct state {new, established} accept
+sudo nft add rule ip filter INPUT tcp sport {22, 23, 3389} ct state {new, established} accept
+sudo nft add rule ip filter OUTPUT tcp dport {22, 23, 3389} ct state {new, established} accept
+sudo nft add rule ip filter OUTPUT tcp sport {22, 23, 3389} ct state {new, established} accept
 ```
 * [matches] = typically protocol headers(i.e. ip, ip6, tcp,
             udp, icmp, ether, etc)
@@ -155,9 +155,9 @@ ip [ saddr | daddr { ip | ip1-ip2 | ip/CIDR | ip1, ip2, ip3 } ]
 
 tcp flags { syn, ack, psh, rst, fin }
 
-tcp [ sport | dport { port1 | port1-port2 | port1, port2, port3 } ]
+tcp [ sport | dport ] { port1 | port1-port2 | port1, port2, port3 }
 
-udp [ sport| dport { port1 | port1-port2 | port1, port2, port3 } ]
+udp [ sport| dport ] { port1 | port1-port2 | port1, port2, port3 }
 
 icmp [ type | code { type# | code# } ]
 
