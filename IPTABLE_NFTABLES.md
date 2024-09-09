@@ -12,7 +12,7 @@ sudo iptables {-A | -I | -D | -F} {chain} [num] {RULES} -j {ACCEPT | DROP | DENY
 ### Port, Protocol, Flags: ( EVERYTHING IS BOTH WAYS UNLESS OTHERWISE SPECIFIED )
 - `-p icmp [ --icmp-type type# { /code# } ]`
 - `-p [tcp|udp] [ --sport XX | --dport XX ]`
-- `-p [tcp|udp] -m multiport [ --dports | --sports | --ports ] 22,23,389`
+- `-p [tcp|udp] -m multiport [ --dports | --sports | --ports ] 22,23,3389`
 - `-p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]`
 
 ### State:
@@ -26,10 +26,8 @@ sudo iptables {-A | -I | -D | -F} {chain} [num] {RULES} -j {ACCEPT | DROP | DENY
 
 ### Prefab Commands
 ```
-sudo iptables -A INPUT -p tcp -m multiport --ports 22,23,389 -m state --state NEW,ESTABLISHED -j ACCEPT
-```
-```
-sudo iptables -A OUTPUT -p tcp -m multiport --ports 22,23,389 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A INPUT -p tcp -m multiport --ports 22,23,3389 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp -m multiport --ports 22,23,3389 -m state --state NEW,ESTABLISHED -j ACCEPT
 
 ```
 Enable SSH,Telnet,RDP both ways
