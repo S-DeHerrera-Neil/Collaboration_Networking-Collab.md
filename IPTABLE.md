@@ -28,3 +28,4 @@ B: Your machine
 -d - Specifies the destination IP
 -j - Specifies the jump target action
 ```
+Before you flush change default policy
