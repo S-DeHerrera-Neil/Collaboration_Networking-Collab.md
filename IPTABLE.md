@@ -29,3 +29,33 @@ B: Your machine
 -j - Specifies the jump target action
 ```
 Before you flush change default policy
+
+# Syntax
+
+iptables -t [table] -A [chain] [rules] -j [action]
+- Table: filter*, nat, mangle
+- Chain: INPUT, OUTPUT, PREROUTING, POSTROUTING, FORWARD
+
+-i [ iface ]
+-o [ iface ]
+-s [ ip.add | network/CIDR ]
+-d [ ip.add | network/CIDR ]
+
+-p icmp [ --icmp-type type# { /code# } ]
+-p tcp [ --sport | --dport { port1 |  port1:port2 } ]
+-p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]
+-p udp [ --sport | --dport { port1 | port1:port2 } ]
+
+-m state --state NEW,ESTABLISHED,RELATED,UNTRACKED,INVALID
+-m mac [ --mac-source | --mac-destination ] [mac]
+-p [tcp|udp] -m multiport [ --dports | --sports | --ports { port1 | port1:port15 } ]
+-m bpf --bytecode [ 'bytecode' ]
+-m iprange [ --src-range | --dst-range { ip1-ip2 } ]
+
+    ACCEPT - Allow the packet
+
+    REJECT - Deny the packet (send an ICMP reponse)
+
+    DROP - Deny the packet (send no response)
+
+    -j [ ACCEPT | REJECT | DROP ]
