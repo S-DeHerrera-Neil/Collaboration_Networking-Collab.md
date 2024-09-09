@@ -59,3 +59,49 @@ iptables -t [table] -A [chain] [rules] -j [action]
     DROP - Deny the packet (send no response)
 
     -j [ ACCEPT | REJECT | DROP ]
+
+Flush `iptables -t [table] -F`
+Change Default Policy `iptables -t [table] -P [chain] [action]`
+List Rule as commands: `iptables -t [table] -S`
+
+# NFTABLES
+Replaces:
+- iptables
+- ip6tables
+- arptables
+- ebtables
+
+## Chain Types
+- filter - to filter packets - can be used with arp, bridge, ip, ip6, and inet families
+- route - to reroute packets - can be used with ip and ipv6 families only
+- nat - used for Network Address Translation - used with ip and ip6 table families only
+
+## Syntax
+
+### 1. Create Table
+```
+nft add table [family] [table]
+```
+- [family] = ip*, ip6, inet, arp, bridge and netdev.
+- [table] = user provided name for the table.
+### 2. Create the Base Chain
+```
+nft add chain [family] [table] [chain] { type [type] hook [hook]
+    priority [priority] \; policy [policy] \;}
+```
+* [chain] = User defined name for the chain.
+
+* [type] =  can be filter, route or nat.
+
+* [hook] = prerouting, ingress, input, forward, output or
+         postrouting.
+
+* [priority] = user provided integer. Lower number = higher
+             priority. default = 0. Use "--" before
+             negative numbers.
+
+* ; [policy] ; = set policy for the chain. Can be
+              accept (default) or drop.
+
+ Use "\" to escape the ";" in bash
+### 3. Create a rule in the chain
