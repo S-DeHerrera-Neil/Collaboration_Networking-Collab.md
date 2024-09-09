@@ -140,4 +140,27 @@ nft { delete | list | flush } table [family] [table]
 
 nft { delete | list | flush } chain [family] [table] [chain]
 
-## 
+# NAT & PAT Operators & Chains
+![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/T55_NAT&PAT_Chains.png)
+![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/Source_NAT_image.png)
+```
+iptables -t nat -A POSTROUTING -o eth0 -s 192.168.0.1 -j SNAT --to 1.1.1.1
+```
+![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/T16_Source_NAT_Graphic.png)
+```
+iptables -t nat -A POSTROUTING -p tcp -o eth0 -s 192.168.0.1 -j SNAT --to 1.1.1.1:9001
+```
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
+![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/Dest_NAT_image.png)
+```
+iptables -t nat -A PREROUTING -i eth0 -d 8.8.8.8 -j DNAT --to 10.0.0.1
+```
+![image]()
+```
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 22 -j DNAT --to 10.0.0.1:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.0.2:80
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j DNAT --to 10.0.0.3:443
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+```
