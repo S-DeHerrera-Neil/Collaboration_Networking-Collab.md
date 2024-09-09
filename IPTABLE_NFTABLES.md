@@ -10,9 +10,9 @@ Positional Arguments
 
 Port, Protocol, Flags:
 - `-p icmp [ --icmp-type type# { /code# } ]`
-- `-p tcp [ --sport | --dport 1,2,3,4 ]`
+- `-p [tcp|udp] [ --sport XX | --dport XX ]`
+- `-p [tcp|udp] -m multiport [ --dports | --sports | --ports ] 22,23,389`
 - `-p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]`
-- `-p udp [ --sport | --dport 1,2,3,4 ]`
 
 State:
 - `-m state --state NEW,ESTABLISHED,RELATED,UNTRACKED,INVALID`
