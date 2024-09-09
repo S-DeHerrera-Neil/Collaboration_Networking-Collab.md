@@ -1,4 +1,4 @@
-# Ip Tables Improved Notes
+# IPTABLES Notes
 ## Create A Rule
 ```
 sudo iptables {-A | -I | -D | -F} {chain} [num] {RULES} -j {ACCEPT | DROP | DENY}
@@ -35,7 +35,7 @@ Enable SSH,Telnet,RDP both ways
 ```
 sudo iptables -P chain [ACCEPT | DROP | REJECT ]
 ```
-Default policy for each chain
+Change default policy for each chain
 
 
 # Chain Flow
@@ -46,7 +46,7 @@ B: Your machine
 - Output: B -> C
 - Forward: A -> B -> C
 
-# IPTABLE options
+### All IPTABLE options
 ```
 -t - Specifies the table. (Default is filter)
 -A - Appends a rule to the end of the list or below specified rule
@@ -68,23 +68,7 @@ B: Your machine
 -d - Specifies the destination IP
 -j - Specifies the jump target action
 ```
-Before you flush change default policy
 
-# Syntax
-
-iptables -t [table] -A [chain] [rules] -j [action]
-- Table: filter*, nat, mangle
-- Chain: INPUT, OUTPUT, PREROUTING, POSTROUTING, FORWARD
-
--i [ iface ]
--o [ iface ]
-
-
-
-
-
-
--p [tcp|udp] -m multiport [ --dports | --sports | --ports { port1 | port1:port15 } ]
 -m bpf --bytecode [ 'bytecode' ]
 
 
@@ -101,6 +85,9 @@ Change Default Policy `iptables -t [table] -P [chain] [action]`
 List Rule as commands: `iptables -t [table] -S`
 
 # NFTABLES
+
+
+
 Replaces:
 - iptables
 - ip6tables
