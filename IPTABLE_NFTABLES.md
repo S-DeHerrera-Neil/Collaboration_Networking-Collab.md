@@ -1,3 +1,32 @@
+# Ip Tables Improved Notes
+## Create A Rule
+```
+sudo iptables {-A | -I | -D} {chain} [num] {RULES} -j {ACCEPT | DROP | DENY}
+```
+Positional Arguments
+- Append `-A chain` this appends the rule to the end of the chain
+- Insert `-I chain` by default this inserts the rule at the top of the chain, however by adding a number `-I chain num` it will replace the rule at the specified number
+- Delete `-D chain num` deletes the rule at the specified position
+
+Rule Formatting
+- `-p icmp [ --icmp-type type# { /code# } ]`
+- `-p tcp [ --sport | --dport 1,2,3,4 ]`
+- `-p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]`
+- `-p udp [ --sport | --dport 1,2,3,4 ]`
+
+```
+sudo iptables -F {chain}
+```
+Flushes all the rules in a chain
+## Replace a Rule
+```
+sudo iptables
+```
+
+
+
+
+
 # Chain Flow
 ![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/IPtables.png)
 
@@ -41,10 +70,7 @@ iptables -t [table] -A [chain] [rules] -j [action]
 -s [ ip.add | network/CIDR ]
 -d [ ip.add | network/CIDR ]
 
--p icmp [ --icmp-type type# { /code# } ]
--p tcp [ --sport | --dport { port1 |  port1:port2 } ]
--p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]
--p udp [ --sport | --dport { port1 | port1:port2 } ]
+
 
 -m state --state NEW,ESTABLISHED,RELATED,UNTRACKED,INVALID
 -m mac [ --mac-source | --mac-destination ] [mac]
