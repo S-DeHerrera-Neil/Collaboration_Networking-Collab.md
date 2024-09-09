@@ -104,6 +104,8 @@ Replaces:
 ### 1. Create Table
 ```
 nft add table [family] [table]
+EXAMPLE:
+nft add table ip FILTER
 ```
 - [family] = ip*, ip6, inet, arp, bridge and netdev.
 - [table] = user provided name for the table.
@@ -111,6 +113,10 @@ nft add table [family] [table]
 ```
 nft add chain [family] [table] [chain] { type [type] hook [hook]
     priority [priority] \; policy [policy] \;}
+EXAMPLES:
+sudo nft add chain ip FILTER INPUT {type filter hook input priority 0 \; policy accept \;}
+sudo nft add chain ip FILTER FORWARD {type filter hook forward priority 0 \; policy accept \;}
+sudo nft add chain ip FILTER OUTPUT {type filter hook output priority 0 \; policy accept \;}
 ```
 * [chain] = User defined name for the chain.
 
