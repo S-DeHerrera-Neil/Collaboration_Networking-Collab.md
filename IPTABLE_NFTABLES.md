@@ -27,8 +27,9 @@ sudo iptables {-A | -I | -D | -F} {chain} [num] {RULES} -j {ACCEPT | DROP | DENY
 ### Prefab Commands
 ```
 sudo iptables -A INPUT -p tcp -m multiport --ports 22,23,3389 -m state --state NEW,ESTABLISHED -j ACCEPT
+```
+```
 sudo iptables -A OUTPUT -p tcp -m multiport --ports 22,23,3389 -m state --state NEW,ESTABLISHED -j ACCEPT
-
 ```
 Enable SSH,Telnet,RDP both ways
 
