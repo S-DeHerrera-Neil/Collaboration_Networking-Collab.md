@@ -172,19 +172,19 @@ snort [options]
 * metadata: - allows a rule writer to embed additional information about the rule
 ```
 #### payload detection
-```
-* content:"text" - looks for a string of text.
-* content:"|binary data|" - to look for a string of binary HEX
-* nocase - modified content, makes it case insensitive
-* depth: - specify how many bytes into a packet Snort should search for the
+
+- content:"text" - looks for a string of text.
+- content:"|binary data|" - to look for a string of binary HEX
+- nocase - modified content, makes it case insensitive
+- depth: - specify how many bytes into a packet Snort should search for the
            specified pattern
-* offset: - skips a certain number of bytes before searching (i.e. offset: 12)
-* distance: - how far into a packet Snort should ignore before starting to
+- offset: - skips a certain number of bytes before searching (i.e. offset: 12)
+- distance: - how far into a packet Snort should ignore before starting to
               search for the specified pattern relative to the end of the
               previous pattern match
-* within: - modifier that makes sure that at most N bytes are between pattern
+- within: - modifier that makes sure that at most N bytes are between pattern
             matches using the content keyword
-```
+
 #### non-payload detection
 ```
 * flow: - direction (to/from client and server) and state of connection
