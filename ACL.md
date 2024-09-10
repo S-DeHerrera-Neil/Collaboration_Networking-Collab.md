@@ -223,3 +223,22 @@ count [#], seconds [seconds]
 * count - number of rule matching in [s] seconds that will cause event_filter
           limit to be exceeded
 * seconds - time period over which count is accrued. [s] must be nonzero value
+
+### Example SNORT rules
+```
+alert tcp any any -> any 21 (msg:"Anonymous FTP Login"; content: "anonymous";
+nocase; sid:2121; )
+```
+Anonymous ftp traffic
+
+```
+alert icmp any any -> 10.10.0.40 any (msg: "NMAP ping sweep Scan";
+dsize:0; itype:8; icode:0; sid:10000004; rev: 1; )
+```
+ICMP ping sweep
+
+```
+alert tcp any any -> any any (msg:"NoOp sled"; content: "|9090 9090 9090|";
+sid:9090; rev: 1; )
+```
+NoOP sled
