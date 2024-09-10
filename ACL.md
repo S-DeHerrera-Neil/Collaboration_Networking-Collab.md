@@ -242,3 +242,11 @@ alert tcp any any -> any any (msg:"NoOp sled"; content: "|9090 9090 9090|";
 sid:9090; rev: 1; )
 ```
 NoOP sled
+
+```
+alert tcp any 23 -> any any (msg:"TELNET login incorrect";
+content:"Login incorrect"; nocase; flow:established, from_server;
+threshold: type both, track by_src, count 3, seconds 30;
+classtype: bad-unknown; sid:2323; rev:6; )
+```
+Telnet brute force login attempt (more than 3 in 30 seconds)
