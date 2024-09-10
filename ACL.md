@@ -38,7 +38,6 @@ router(config-std-nacl)#  permit any
 
 ## Extended ACLS
 Rule: Place closest to source of traffic
-### Numbered
 ```
 router(config)# access-list {100-199 | 2000-2699} {permit | deny} {protocol}
                 {source IP add & wildcard} {operand: eq|lt|gt|neq}
@@ -71,4 +70,133 @@ router(config-ext-nacl)# permit icmp 10.0.0.0 0.255.255.255 192.168.0.0
 router(config-ext-nacl)# deny icmp 10.0.0.0 0.255.255.255 192.168.0.0
                          0.0.255.255 echo-reply
 router(config-ext-nacl)# permit ip any any
+```
+## Apply to Interface
+```
+router(config)#  interface {type} {mod/slot/port}
+
+router(config)#  ip access-group {ACL# | name} {in | out}
+
+router(config)#  interface s0/0/0
+
+router(config-if)#  ip access-group 10 out
+
+router(config)#  interface g0/1/1
+
+router(config-if)#  ip access-group CCTC-EXT in
+
+router(config)#  line vty 0 15
+
+router(config)#  access-class CCTC-STD i
+```
+## ACL Uses
+Filtering traffic in/out of a network interface.
+
+Permit or deny traffic to/from a router VTY line.
+
+Identify authorized users and traffic to perform NAT.
+
+Classify traffic for Quality of Service (QoS).
+
+Trigger dial-on-demand (DDR) calls.
+
+Control Bandwidth.
+
+Limit debug command output.
+
+Restrict the content of routing updates
+
+## ACL Rules
+ne ACL per interface, protocol and direction
+
+Must contain one permit statement
+
+Read top down
+
+Standard ACL generally applied closer to traffic destination
+
+Extended ACL generally applied closer to traffic sourc
+# IDS and IPS
+![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/T13_IDSList.jpg)
+## SNORT
+Installation Directory
+```
+    /etc/snort
+```
+Configuration File
+```
+    /etc/snort/snort.conf
+```
+Rules Directory
+```
+    /etc/snort/rules
+```
+Rule naming
+```
+[name].rules
+```
+Default Log Directory
+```
+/var/log/snort
+```
+### SNORT syntax
+```
+snort [options]
+```
+- `-D` to run snort as a daemon
+- `-c` to specify a configuration file when running snort
+- `-l` specify a log directory
+- `-r` to have snort read a pcap file
+
+### Creating a rule
+```
+[action] [protocol] [s.ip] [s.port] [direction] [d.ip] [d.port] ( match conditions ;)
+```
+```
+* Action - alert, log, pass, drop, or reject
+* Protocol - TCP, UDP, ICMP, or IP
+* Source IP address - one IP, network, [IP range], or any
+* Source Port - one, [multiple], any, or [range of ports]
+* Direction - source to destination or both
+* Destination IP address - one IP, network, [IP range], or any
+* Destination port - one, [multiple], any, or [range of ports]
+```
+#### rule options
+```
+* msg:"text" - specifies the human-readable alert message
+* reference: - links to external source of the rule
+* sid: - used to uniquely identify Snort rules (required)
+* rev: - uniquely identify revisions of Snort rules
+* classtype: - used to describe what a successful attack would do
+* priority: - level of concern (1 - really bad, 2 - badish, 3 - informational)
+* metadata: - allows a rule writer to embed additional information about the rule
+```
+#### payload detection
+```
+* content:"text" - looks for a string of text.
+* content:"|binary data|" - to look for a string of binary HEX
+* nocase - modified content, makes it case insensitive
+* depth: - specify how many bytes into a packet Snort should search for the
+           specified pattern
+* offset: - skips a certain number of bytes before searching (i.e. offset: 12)
+* distance: - how far into a packet Snort should ignore before starting to
+              search for the specified pattern relative to the end of the
+              previous pattern match
+* within: - modifier that makes sure that at most N bytes are between pattern
+            matches using the content keyword
+```
+#### non-payload detection
+```
+* flow: - direction (to/from client and server) and state of connection
+         (established, stateless, stream/no stream)
+* ttl: - The ttl keyword is used to check the IP time-to-live value.
+* tos: - The tos keyword is used to check the IP TOS field for a specific value.
+* ipopts: - The ipopts keyword is used to check if a specific IP option is present
+* fragbits: - Check for R|D|M ip flags.
+* dsize: - Test the packet payload size
+* seq: - Check for a specific TCP sequence number
+* ack: - Check for a specific TCP acknowledge number.
+* flags: - Check for E|C|U|A|P|R|S|F|0 TCP flags.
+* itype: - The itype keyword is used to check for a specific ICMP type value.
+* icode: - The icode keyword is used to check for a specific ICMP code value.
 ```
