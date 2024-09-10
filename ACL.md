@@ -26,7 +26,9 @@ router(config-(ACL NAME))# {permit | deny}  {source ip add}  {source wildcard ma
 router(config)#  access-list 10 permit host 10.0.0.1
 router(config)#  access-list 10 deny 10.0.0.0 0.255.255.255
 router(config)#  access-list 10 permit any
+```
 or
+```
 router(config)#  ip access-list standard CCTC-STD
 router(config-std-nacl)#  permit host 10.0.0.1
 router(config-std-nacl)#  deny 10.0.0.0 0.255.255.255
@@ -56,7 +58,9 @@ router(config)# access-list 144 permit icmp 10.0.0.0 0.255.255.255 192.168.0.0
 router(config)# access-list 144 deny icmp 10.0.0.0 0.255.255.255 192.168.0.0
                 0.0.255.255 echo-reply
 router(config)# access-list 144 permit ip any any
+```
 or
+```
 router(config)# ip access-list extended CCTC-EXT
 router(config-ext-nacl)# permit tcp host 10.0.0.1 any eq 22
 router(config-ext-nacl)# deny tcp 10.0.0.0 0.255.255.255 any eq telnet
