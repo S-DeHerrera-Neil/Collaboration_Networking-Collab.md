@@ -250,3 +250,10 @@ threshold: type both, track by_src, count 3, seconds 30;
 classtype: bad-unknown; sid:2323; rev:6; )
 ```
 Telnet brute force login attempt (more than 3 in 30 seconds)
+# Types of attacks
+## Insertion Attack
+![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/insertion.png)
+Insert additional data that is blocked so the overall session is harder to read
+## Evasion Attack
+![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/evasion.png)
+Data is created in a way that the full traffic cannot be read over the firewall and is reconstructed when it reaches the destination
