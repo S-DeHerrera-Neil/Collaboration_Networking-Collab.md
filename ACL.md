@@ -15,6 +15,7 @@ D - Proxy for DMZ and a VPN concentrator
 ![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/T4a_ACL_Naming2.jpg)
 
 ## Standard ACLs
+Rule: Place closest to destination of traffic
 ```
 router(config)# access-list {1-99 | 1300-1999} {permit|deny} {source IP add} {source wildcard mask}
 or
@@ -36,6 +37,7 @@ router(config-std-nacl)#  permit any
 ```
 
 ## Extended ACLS
+Rule: Place closest to source of traffic
 ### Numbered
 ```
 router(config)# access-list {100-199 | 2000-2699} {permit | deny} {protocol}
