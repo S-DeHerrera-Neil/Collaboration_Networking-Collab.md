@@ -173,30 +173,53 @@ snort [options]
 ```
 #### payload detection
 
-- content:"text" - looks for a string of text.
-- content:"|binary data|" - to look for a string of binary HEX
-- nocase - modified content, makes it case insensitive
-- depth: - specify how many bytes into a packet Snort should search for the
+- `content:"text"` - looks for a string of text.
+- `content:"|binary data|"` - to look for a string of binary HEX
+- `nocase` - modified content, makes it case insensitive
+- `depth: {num}` - specify how many bytes into a packet Snort should search for the
            specified pattern
-- offset: - skips a certain number of bytes before searching (i.e. offset: 12)
-- distance: - how far into a packet Snort should ignore before starting to
+- `offset: {num}` - skips a certain number of bytes before searching (i.e. offset: 12)
+- `distance: {num}` - how far into a packet Snort should ignore before starting to
               search for the specified pattern relative to the end of the
               previous pattern match
-- within: - modifier that makes sure that at most N bytes are between pattern
+- `within: {num}` - modifier that makes sure that at most N bytes are between pattern
             matches using the content keyword
 
 #### non-payload detection
-```
-* flow: - direction (to/from client and server) and state of connection
+
+- `flow: {options}` - direction (to/from client and server) and state of connection
          (established, stateless, stream/no stream)
-* ttl: - The ttl keyword is used to check the IP time-to-live value.
-* tos: - The tos keyword is used to check the IP TOS field for a specific value.
-* ipopts: - The ipopts keyword is used to check if a specific IP option is present
-* fragbits: - Check for R|D|M ip flags.
-* dsize: - Test the packet payload size
-* seq: - Check for a specific TCP sequence number
-* ack: - Check for a specific TCP acknowledge number.
-* flags: - Check for E|C|U|A|P|R|S|F|0 TCP flags.
-* itype: - The itype keyword is used to check for a specific ICMP type value.
-* icode: - The icode keyword is used to check for a specific ICMP code value.
+- `ttl: {options}`- The ttl keyword is used to check the IP time-to-live value.
+- `tos: {options}` - The tos keyword is used to check the IP TOS field for a specific value.
+- `ipopts: {options}` - The ipopts keyword is used to check if a specific IP option is present
+- `fragbits: {options}` - Check for R|D|M ip flags.
+- `dsize: {options}` - Test the packet payload size
+- `seq: {options}` - Check for a specific TCP sequence number
+- `ack: {options}` - Check for a specific TCP acknowledge number.
+- `flags: {options}` - Check for E|C|U|A|P|R|S|F|0 TCP flags.
+- `itype: {options}` - The itype keyword is used to check for a specific ICMP type value.
+- `icode: {options}` - The icode keyword is used to check for a specific ICMP code value.
+
+#### post detection
+* logto: - The logto keyword tells Snort to log all packets that trigger this rule to
+           a special output log file.
+* session: - The session keyword is built to extract user data from TCP Sessions.
+* react: - This keyword implements an ability for users to react to traffic that
+           matches a Snort rule by closing connection and sending a notice.
+* tag: - The tag keyword allow rules to log more than just the single packet that
+         triggered the rule.
+* detection_filter - defines a rate which must be exceeded by a source or destination
+                     host before a rule can generate an event.
+#### thresholding and suppression options
 ```
+threshold: type [limit | threshold | both], track [by_src | by_dst],
+count [#], seconds [seconds]
+```
+* limit - alerts on the 1st event during defined period then ignores the rest.
+* threshold - alerts every [x] times during defined period.
+* both - alerts once per time internal after seeing [x] amount of occurrences
+         of event. It then ignores all other events during period.
+* track - rate is tracked either by source IP address, or destination IP address
+* count - number of rule matching in [s] seconds that will cause event_filter
+          limit to be exceeded
+* seconds - time period over which count is accrued. [s] must be nonzero value
