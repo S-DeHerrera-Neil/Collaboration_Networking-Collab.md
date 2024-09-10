@@ -15,36 +15,37 @@ D - Proxy for DMZ and a VPN concentrator
 ![image](https://git.cybbh.space/net/public/raw/master/modules/networking/slides-v4/images/T4a_ACL_Naming2.jpg)
 
 ## Standard ACLs
-### Numbered
 ```
 router(config)# access-list {1-99 | 1300-1999} {permit|deny} {source IP add} {source wildcard mask}
+or
+router(config)# ip access-list standard [name]
+router(config-(ACL NAME))# {permit | deny}  {source ip add}  {source wildcard mask}
 ```
 #### Examples
 ```
 router(config)#  access-list 10 permit host 10.0.0.1
 router(config)#  access-list 10 deny 10.0.0.0 0.255.255.255
 router(config)#  access-list 10 permit any
-```
-### Named
-```
-router(config)# ip access-list standard [name]
-router(config-(ACL NAME))# {permit | deny}  {source ip add}  {source wildcard mask}
-```
-#### Examples
-```
+or
 router(config)#  ip access-list standard CCTC-STD
 router(config-std-nacl)#  permit host 10.0.0.1
 router(config-std-nacl)#  deny 10.0.0.0 0.255.255.255
 router(config-std-nacl)#  permit any
 ```
 
-## Extended
+## Extended ACLS
 ### Numbered
 ```
 router(config)# access-list {100-199 | 2000-2699} {permit | deny} {protocol}
                 {source IP add & wildcard} {operand: eq|lt|gt|neq}
                 {port# |protocol} {dest IP add & wildcard} {operand: eq|lt|gt|neq}
                 {port# |protocol}
+or
+router(config)# ip access-list extended  [name]
+router(config-ext-nacl)# [sequence number] {permit | deny} {protocol}
+                         {source IP add & wildcard} {operand: eq|lt|gt|neq}
+                         {port# |protocol} {dest IP add & wildcard} {operand:
+                         eq|lt|gt|neq} {port# |protocol}
 ```
 #### Examples
 ```
@@ -55,17 +56,7 @@ router(config)# access-list 144 permit icmp 10.0.0.0 0.255.255.255 192.168.0.0
 router(config)# access-list 144 deny icmp 10.0.0.0 0.255.255.255 192.168.0.0
                 0.0.255.255 echo-reply
 router(config)# access-list 144 permit ip any any
-```
-### Named
-```
-router(config)# ip access-list extended  [name]
-router(config-ext-nacl)# [sequence number] {permit | deny} {protocol}
-                         {source IP add & wildcard} {operand: eq|lt|gt|neq}
-                         {port# |protocol} {dest IP add & wildcard} {operand:
-                         eq|lt|gt|neq} {port# |protocol}
-```
-#### Examples
-```
+or
 router(config)# ip access-list extended CCTC-EXT
 router(config-ext-nacl)# permit tcp host 10.0.0.1 any eq 22
 router(config-ext-nacl)# deny tcp 10.0.0.0 0.255.255.255 any eq telnet
@@ -75,4 +66,3 @@ router(config-ext-nacl)# deny icmp 10.0.0.0 0.255.255.255 192.168.0.0
                          0.0.255.255 echo-reply
 router(config-ext-nacl)# permit ip any any
 ```
-## ACL Rules
