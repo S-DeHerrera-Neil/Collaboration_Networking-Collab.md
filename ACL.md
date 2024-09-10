@@ -139,7 +139,7 @@ Default Log Directory
 ```
 /var/log/snort
 ```
-### SNORT syntax
+### SNORT run options
 ```
 snort [options]
 ```
