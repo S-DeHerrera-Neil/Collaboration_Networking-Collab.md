@@ -1,3 +1,15 @@
+# TCPDUMP
+```
+tcpdump {A} [B:C] {D} {E} {F} {G}
+
+A = Protocol (ether | arp | ip | ip6 | icmp | tcp | udp)
+B = Header Byte offset
+C = optional: Byte Length. Can be 1, 2 or 4 (default 1)
+D = optional: Bitwise mask ( & )
+E = Relational operator ( = | == | > | < | <= | >= | != | () | << | >> )
+F = Result of Expression
+G = optional: Logical Operator ( && || ) to bridge expressions
+```
 # Data-link (Layer 2)
 ## [Ethernet](https://net.cybbh.io/public/networking/latest/01_data/fg.html#_1_3_6_describe_the_contents_of_an_ethernet_header_and_frame)
 ![alt](https://github.com/user-attachments/assets/453eefde-c97c-4612-84b3-ab0a72df9a86)
