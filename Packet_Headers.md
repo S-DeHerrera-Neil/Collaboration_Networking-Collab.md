@@ -1,6 +1,6 @@
 # TCPDUMP
 ```
-tcpdump {A} [B:C] {D} {E} {F} {G}
+sudo tcpdump '{A} [B:C] {D} {E} {F} {G}'
 
 A = Protocol (ether | arp | ip | ip6 | icmp | tcp | udp)
 B = Header Byte offset
@@ -10,6 +10,16 @@ E = Relational operator ( = | == | > | < | <= | >= | != | () | << | >> )
 F = Result of Expression
 G = optional: Logical Operator ( && || ) to bridge expressions
 ```
+```
+sudo tcpdump -r file.pcap 'expression'
+```
+Reading from a pcap
+
+```
+sudo tcpdump -XX -nn -vv -i any 'expression'
+```
+Reading network traffic via interface
+
 # Data-link (Layer 2)
 ## [Ethernet](https://net.cybbh.io/public/networking/latest/01_data/fg.html#_1_3_6_describe_the_contents_of_an_ethernet_header_and_frame)
 ![alt](https://github.com/user-attachments/assets/453eefde-c97c-4612-84b3-ab0a72df9a86)
