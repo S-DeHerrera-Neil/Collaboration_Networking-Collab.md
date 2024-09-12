@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # command syntax ./ping_sweep_v2 X.X.X
 # only give first three octets
 echo "ping scan for ${i}.1-255" > ping_result
